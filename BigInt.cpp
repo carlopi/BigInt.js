@@ -25,7 +25,7 @@ public:
 		std::string S(*s);
 		wrapper(mp_read_radix(&number, &S[0] + begin, radix));
 	}
-	client::String* toString(int radix = 0)
+	client::String* toString(int radix = 10)
 	{
 		int dim = 0;
 		wrapper(mp_radix_size(&number, radix, &dim));

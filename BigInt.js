@@ -4159,7 +4159,7 @@ function __ZN6BigInt9remainderERKS_S1_(La,Lb){
 	return tmp0;
 }
 function __ZN6BigIntC1EPN6client6StringE(Lthis,Ls){
-	var tmp0=null,tmp1=null,LS=null,Lcall5=0,Lcall9=0;
+	var tmp0=null,Lbegin$p0=0,tmp2=null,LS=null,Lcall8=0;
 	LS=new Int32Array(32);
 	tmp0=Lthis;
 	tmp0.a3=LS;
@@ -4168,18 +4168,22 @@ function __ZN6BigIntC1EPN6client6StringE(Lthis,Ls){
 	tmp0.i2=0;
 	if(Ls!==null){
 		if((Ls.charCodeAt(0)|0)===48){
-			Lcall5=Ls.charCodeAt(1);
-			Lcall9=Ls.charCodeAt(1);
-			Lcall5=(Lcall9|0)===98?2|0:((Lcall5|0)===120?16|0:10|0)|0;
-			Lcall9=2;
+			if((Ls.charCodeAt(1)|0)===120){
+				Lbegin$p0=2;
+				Lcall8=16;
+			}else{
+				Lcall8=Ls.charCodeAt(1);
+				Lcall8=(Lcall8|0)===98?2|0:10|0;
+				Lbegin$p0=2;
+			}
 		}else{
-			Lcall9=0;
-			Lcall5=10;
+			Lbegin$p0=0;
+			Lcall8=10;
 		}
 		LS={i0:0,i1:0,a2:nullArray};
 		__ZNK6client6StringcvSsEv(LS,Ls);
-		tmp1=LS.a2;
-		_mp_read_radix(tmp0,tmp1,0+Lcall9|0,Lcall5);
+		tmp2=LS.a2;
+		_mp_read_radix(tmp0,tmp2,0+Lbegin$p0|0,Lcall8);
 	}
 }
 function __ZNK6client6StringcvSsEv(Lagg$presult,Lthis){

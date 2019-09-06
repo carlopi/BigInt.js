@@ -19,11 +19,11 @@ public:
 			begin = 2;
 			if (s->charCodeAt(1) == 'x')
 				radix = 16;
-			if (s->charCodeAt(1) == 'b')
+			else if (s->charCodeAt(1) == 'b')
 				radix = 2;
 		}
 		std::string S(*s);
-		wrapper(mp_read_radix(&number, &S[begin], radix));
+		wrapper(mp_read_radix(&number, &S[0] + begin, radix));
 	}
 	client::String* toString(int radix = 0)
 	{

@@ -108,8 +108,8 @@ var libraries = (function () {
         "Peter Olson BigInteger.js": {
             url: ["https://unpkg.com/biginteger@1.0.3/biginteger.js"],
             projectURL: "https://github.com/peterolson/BigInteger.js",
-            onStart: createInitialization("bigInt"),
-            tests: generateTests(function (x) { return x.replace("parseInt", "bigInt"); })
+            onStart: createInitialization("BigInteger"),
+            tests: generateTests(function (x) { return x.replace("parseInt", "BigInteger"); })
         },
         "Yaffle BigInteger": {
             url: ["https://rawgit.com/Yaffle/BigInteger/gh-pages/BigInteger.js"],

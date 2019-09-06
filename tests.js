@@ -173,7 +173,7 @@ var libraries = (function () {
                 .replace("parseInt", "BigInteger.parse");
             })
         },*/
-        "Tom Wu jsbn": {
+        /*"Tom Wu jsbn": {
             url: ["http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn.js", "http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn2.js"],
             projectURL: "http://www-cs-students.stanford.edu/~tjw/jsbn/",
             onStart: createInitialization("new BigInteger"),
@@ -183,7 +183,7 @@ var libraries = (function () {
                 .replace(/\.over/g, ".divide")
                 .replace("parseInt", "new BigInteger");
             })
-        },
+        },*/
         "Fedor Indutny bn.js": {
             url: ["https://rawgit.com/indutny/bn.js/master/lib/bn.js"],
             projectURL: "https://github.com/indutny/bn.js",

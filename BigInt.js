@@ -2,6 +2,9 @@
 /*Compiled using Cheerp (R) by Leaning Technologies Ltd*/
 var __imul=Math.imul;
 var __fround=Math.fround;
+var _ZN6BigIntC2EPN6client6StringE=__ZN6BigIntC2EPN6client6StringE;
+var _ZN6BigIntC1EPN6client6StringE=__ZN6BigIntC1EPN6client6StringE;
+var _ZN6BigInt8toStringEi=__ZN6BigInt8toStringEi;
 function BigInt(a0){
 	this.i0=0;
 	this.i1=0;
@@ -4037,6 +4040,7 @@ function _s_mp_toom_sqr(La,Lb){
 function __ZN6BigInt12exponentiateERKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null,L$p$pi$pi=0,Lres$p05$pi$pi=0;
 	tmp0=new BigInt(undefined);
+	console.log(String(null));
 	tmp2=new Int32Array(32);
 	tmp1=tmp0;
 	tmp1.a3=tmp2;
@@ -4067,6 +4071,7 @@ function __ZN6BigInt12exponentiateERKS_S1_(La,Lb){
 function __ZN6BigInt3addERKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null;
 	tmp0=new BigInt(undefined);
+	console.log(String(null));
 	tmp1=new Int32Array(32);
 	tmp2=tmp0;
 	tmp2.a3=tmp1;
@@ -4079,6 +4084,7 @@ function __ZN6BigInt3addERKS_S1_(La,Lb){
 function __ZN6BigInt6divideERKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null;
 	tmp0=new BigInt(undefined);
+	console.log(String(null));
 	tmp1=new Int32Array(32);
 	tmp2=tmp0;
 	tmp2.a3=tmp1;
@@ -4091,6 +4097,7 @@ function __ZN6BigInt6divideERKS_S1_(La,Lb){
 function __ZN6BigInt8multiplyEPKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null;
 	tmp0=new BigInt(undefined);
+	console.log(String(null));
 	tmp2=new Int32Array(32);
 	tmp1=tmp0;
 	tmp1.a3=tmp2;
@@ -4105,6 +4112,7 @@ function __ZN6BigInt8multiplyEPKS_S1_(La,Lb){
 function __ZN6BigInt8subtractERKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null;
 	tmp0=new BigInt(undefined);
+	console.log(String(null));
 	tmp1=new Int32Array(32);
 	tmp2=tmp0;
 	tmp2.a3=tmp1;
@@ -4149,6 +4157,7 @@ function _cheerpCreate_ZN6client6StringC2EPKc(Larg0,Marg0){
 function __ZN6BigInt9remainderERKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null;
 	tmp0=new BigInt(undefined);
+	console.log(String(null));
 	tmp1=new Int32Array(32);
 	tmp2=tmp0;
 	tmp2.a3=tmp1;
@@ -4159,7 +4168,8 @@ function __ZN6BigInt9remainderERKS_S1_(La,Lb){
 	return tmp0;
 }
 function __ZN6BigIntC1EPN6client6StringE(Lthis,Ls){
-	var tmp0=null,Lbegin$p0=0,tmp2=null,LS=null,Lcall8=0;
+	var tmp0=null,Lbegin$p0=0,tmp2=null,LS=null,Lcall4=0;
+	console.log(String(Ls));
 	LS=new Int32Array(32);
 	tmp0=Lthis;
 	tmp0.a3=LS;
@@ -4168,22 +4178,17 @@ function __ZN6BigIntC1EPN6client6StringE(Lthis,Ls){
 	tmp0.i2=0;
 	if(Ls!==null){
 		if((Ls.charCodeAt(0)|0)===48){
-			if((Ls.charCodeAt(1)|0)===120){
-				Lbegin$p0=2;
-				Lcall8=16;
-			}else{
-				Lcall8=Ls.charCodeAt(1);
-				Lcall8=(Lcall8|0)===98?2|0:10|0;
-				Lbegin$p0=2;
-			}
+			Lcall4=Ls.charCodeAt(1);
+			Lbegin$p0=(Lcall4|0)===120?2|0:0|0;
+			Lcall4=(Lcall4|0)===120?16|0:10|0;
 		}else{
 			Lbegin$p0=0;
-			Lcall8=10;
+			Lcall4=10;
 		}
 		LS={i0:0,i1:0,a2:nullArray};
 		__ZNK6client6StringcvSsEv(LS,Ls);
 		tmp2=LS.a2;
-		_mp_read_radix(tmp0,tmp2,0+Lbegin$p0|0,Lcall8);
+		_mp_read_radix(tmp0,tmp2,0+Lbegin$p0|0,Lcall4);
 	}
 }
 function __ZNK6client6StringcvSsEv(Lagg$presult,Lthis){
@@ -4203,6 +4208,30 @@ function __ZNK6client6StringcvSsEv(Lagg$presult,Lthis){
 			if((Li$p07|0)<(Lthis.length|0))continue;
 			break;
 		}
+	}
+}
+function __ZN6BigIntC2EPN6client6StringE(Lthis,Ls){
+	var tmp0=null,Lbegin$p0=0,tmp2=null,LS=null,Lcall4=0;
+	console.log(String(Ls));
+	LS=new Int32Array(32);
+	tmp0=Lthis;
+	tmp0.a3=LS;
+	tmp0.i0=0;
+	tmp0.i1=32;
+	tmp0.i2=0;
+	if(Ls!==null){
+		if((Ls.charCodeAt(0)|0)===48){
+			Lcall4=Ls.charCodeAt(1);
+			Lbegin$p0=(Lcall4|0)===120?2|0:0|0;
+			Lcall4=(Lcall4|0)===120?16|0:10|0;
+		}else{
+			Lbegin$p0=0;
+			Lcall4=10;
+		}
+		LS={i0:0,i1:0,a2:nullArray};
+		__ZNK6client6StringcvSsEv(LS,Ls);
+		tmp2=LS.a2;
+		_mp_read_radix(tmp0,tmp2,0+Lbegin$p0|0,Lcall4);
 	}
 }
 function __ZNKSt21__basic_string_commonILb1EE20__throw_length_errorEv(){

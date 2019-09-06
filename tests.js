@@ -146,7 +146,7 @@ var libraries = (function () {
             })
         },
         "Cheerp BigInt": {
-	    url: ["https://raw.githack.com/carlopi/BigInt.js/master/BigInt.js"],
+	    url: ["https://rawcdn.githack.com/carlopi/BigInt.js/3c17e11d1f02fe6589ebdb5186ea6550a1131e5a/BigInt.js"],
 		 projectURL: "https://github.com/carlopi/BigInt.js",
             onStart: createInitialization("new BigInt"),
             tests: generateTests(function (x) {

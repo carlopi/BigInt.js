@@ -106,7 +106,7 @@ var libraries = (function () {
 
     var libraries = {
         "Peter Olson BigInteger.js": {
-            url: ["./BigInteger.js"],
+            url: ["https://raw.githubusercontent.com/peterolson/BigInteger.js/master/BigInteger.js"],
             projectURL: "https://github.com/peterolson/BigInteger.js",
             onStart: createInitialization("bigInt"),
             tests: generateTests(function (x) { return x.replace("parseInt", "bigInt"); })
@@ -146,8 +146,8 @@ var libraries = (function () {
             })
         },
         "Cheerp BigInt": {
-            url: ["./BigInt.js"],
-            projectURL: "https://leaningtech.com",
+	    url: ["https://raw.githubusercontent.com/carlopi/BigInt.js/master/BigInt.js"],
+		 projectURL: "https://github.com/carlopi/BigInt.js",
             onStart: createInitialization("new BigInt"),
             tests: generateTests(function (x) {
                 return x

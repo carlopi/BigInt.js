@@ -4,7 +4,6 @@ var __imul=Math.imul;
 var __fround=Math.fround;
 var _ZN6BigIntC2EPN6client6StringE=__ZN6BigIntC2EPN6client6StringE;
 var _ZN6BigIntC1EPN6client6StringE=__ZN6BigIntC1EPN6client6StringE;
-var _ZN6BigInt8toStringEi=__ZN6BigInt8toStringEi;
 function BigInt(a0){
 	this.i0=0;
 	this.i1=0;
@@ -21,7 +20,7 @@ BigInt.prototype.toString=function (a0){
 	return __ZN6BigInt8toStringEi(this,a0);
 };
 BigInt.add=function (a0,a1){
-	return __ZN6BigInt3addERKS_S1_(a0,a1);
+	return __ZN6BigInt3addEPKS_S1_(a0,a1);
 };
 BigInt.subtract=function (a0,a1){
 	return __ZN6BigInt8subtractERKS_S1_(a0,a1);
@@ -4040,7 +4039,6 @@ function _s_mp_toom_sqr(La,Lb){
 function __ZN6BigInt12exponentiateERKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null,L$p$pi$pi=0,Lres$p05$pi$pi=0;
 	tmp0=new BigInt(undefined);
-	console.log(String(null));
 	tmp2=new Int32Array(32);
 	tmp1=tmp0;
 	tmp1.a3=tmp2;
@@ -4068,10 +4066,9 @@ function __ZN6BigInt12exponentiateERKS_S1_(La,Lb){
 	}
 	return tmp0;
 }
-function __ZN6BigInt3addERKS_S1_(La,Lb){
+function __ZN6BigInt3addEPKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null;
 	tmp0=new BigInt(undefined);
-	console.log(String(null));
 	tmp1=new Int32Array(32);
 	tmp2=tmp0;
 	tmp2.a3=tmp1;
@@ -4084,7 +4081,6 @@ function __ZN6BigInt3addERKS_S1_(La,Lb){
 function __ZN6BigInt6divideERKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null;
 	tmp0=new BigInt(undefined);
-	console.log(String(null));
 	tmp1=new Int32Array(32);
 	tmp2=tmp0;
 	tmp2.a3=tmp1;
@@ -4097,7 +4093,6 @@ function __ZN6BigInt6divideERKS_S1_(La,Lb){
 function __ZN6BigInt8multiplyEPKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null;
 	tmp0=new BigInt(undefined);
-	console.log(String(null));
 	tmp2=new Int32Array(32);
 	tmp1=tmp0;
 	tmp1.a3=tmp2;
@@ -4112,7 +4107,6 @@ function __ZN6BigInt8multiplyEPKS_S1_(La,Lb){
 function __ZN6BigInt8subtractERKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null;
 	tmp0=new BigInt(undefined);
-	console.log(String(null));
 	tmp1=new Int32Array(32);
 	tmp2=tmp0;
 	tmp2.a3=tmp1;
@@ -4133,7 +4127,7 @@ function __ZN6BigInt8toStringEi(Lthis,Lradix){
 	tmp3.i0=0;
 	tmp3.i1=0;
 	tmp3.a2=nullArray;
-	__ZNSs6resizeEjc(LS,(Ldim[0]|0)-1|0);
+	__ZNSs6resizeEjc(LS,(Ldim[0]|0)+1|0);
 	tmp3=tmp3.a2;
 	_mp_to_radix(LretConstructor,tmp3,0,Lradix);
 	LretConstructor=_cheerpCreate_ZN6client6StringC2EPKc(tmp3,0);
@@ -4157,7 +4151,6 @@ function _cheerpCreate_ZN6client6StringC2EPKc(Larg0,Marg0){
 function __ZN6BigInt9remainderERKS_S1_(La,Lb){
 	var tmp0=null,tmp1=null,tmp2=null;
 	tmp0=new BigInt(undefined);
-	console.log(String(null));
 	tmp1=new Int32Array(32);
 	tmp2=tmp0;
 	tmp2.a3=tmp1;
@@ -4168,27 +4161,36 @@ function __ZN6BigInt9remainderERKS_S1_(La,Lb){
 	return tmp0;
 }
 function __ZN6BigIntC1EPN6client6StringE(Lthis,Ls){
-	var tmp0=null,Lbegin$p0=0,tmp2=null,LS=null,Lcall4=0;
-	console.log(String(Ls));
+	var tmp0=null,Lbegin$p0=0,tmp2=null,LS=null,Lcall9=0;
 	LS=new Int32Array(32);
 	tmp0=Lthis;
 	tmp0.a3=LS;
 	tmp0.i0=0;
 	tmp0.i1=32;
 	tmp0.i2=0;
-	if(Ls!==null){
+	if(Ls!==null)if((Ls.length|0)!==0){
 		if((Ls.charCodeAt(0)|0)===48){
-			Lcall4=Ls.charCodeAt(1);
-			Lbegin$p0=(Lcall4|0)===120?2|0:0|0;
-			Lcall4=(Lcall4|0)===120?16|0:10|0;
+			if((Ls.length|0)>1){
+				Lcall9=Ls.charCodeAt(1);
+				if((Lcall9|0)===120){
+					Lbegin$p0=2;
+					Lcall9=16;
+				}else{
+					Lcall9=(Lcall9|0)===98?2|0:10|0;
+					Lbegin$p0=2;
+				}
+			}else{
+				Lbegin$p0=0;
+				Lcall9=10;
+			}
 		}else{
 			Lbegin$p0=0;
-			Lcall4=10;
+			Lcall9=10;
 		}
 		LS={i0:0,i1:0,a2:nullArray};
 		__ZNK6client6StringcvSsEv(LS,Ls);
 		tmp2=LS.a2;
-		_mp_read_radix(tmp0,tmp2,0+Lbegin$p0|0,Lcall4);
+		_mp_read_radix(tmp0,tmp2,0+Lbegin$p0|0,Lcall9);
 	}
 }
 function __ZNK6client6StringcvSsEv(Lagg$presult,Lthis){
@@ -4211,27 +4213,36 @@ function __ZNK6client6StringcvSsEv(Lagg$presult,Lthis){
 	}
 }
 function __ZN6BigIntC2EPN6client6StringE(Lthis,Ls){
-	var tmp0=null,Lbegin$p0=0,tmp2=null,LS=null,Lcall4=0;
-	console.log(String(Ls));
+	var tmp0=null,Lbegin$p0=0,tmp2=null,LS=null,Lcall9=0;
 	LS=new Int32Array(32);
 	tmp0=Lthis;
 	tmp0.a3=LS;
 	tmp0.i0=0;
 	tmp0.i1=32;
 	tmp0.i2=0;
-	if(Ls!==null){
+	if(Ls!==null)if((Ls.length|0)!==0){
 		if((Ls.charCodeAt(0)|0)===48){
-			Lcall4=Ls.charCodeAt(1);
-			Lbegin$p0=(Lcall4|0)===120?2|0:0|0;
-			Lcall4=(Lcall4|0)===120?16|0:10|0;
+			if((Ls.length|0)>1){
+				Lcall9=Ls.charCodeAt(1);
+				if((Lcall9|0)===120){
+					Lbegin$p0=2;
+					Lcall9=16;
+				}else{
+					Lcall9=(Lcall9|0)===98?2|0:10|0;
+					Lbegin$p0=2;
+				}
+			}else{
+				Lbegin$p0=0;
+				Lcall9=10;
+			}
 		}else{
 			Lbegin$p0=0;
-			Lcall4=10;
+			Lcall9=10;
 		}
 		LS={i0:0,i1:0,a2:nullArray};
 		__ZNK6client6StringcvSsEv(LS,Ls);
 		tmp2=LS.a2;
-		_mp_read_radix(tmp0,tmp2,0+Lbegin$p0|0,Lcall4);
+		_mp_read_radix(tmp0,tmp2,0+Lbegin$p0|0,Lcall9);
 	}
 }
 function __ZNKSt21__basic_string_commonILb1EE20__throw_length_errorEv(){

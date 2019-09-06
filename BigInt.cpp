@@ -6,26 +6,26 @@
 class [[cheerp::jsexport]] BigInt
 {
 public:
+	[[cheerp::jsexport]]
 	BigInt(client::String* s = NULL)
 	{
+		client::console.log(s);
 		//initialize to 0
 		wrapper(mp_init(&number));
 		if (s == NULL)
 			return;
 		int radix = 10;
 		int begin = 0;
-		if (s->charCodeAt(0) == '0')
+		if (s->charCodeAt(0) == '0' && s->charCodeAt(1) == 'x')
 		{
-			begin = 2;
-			if (s->charCodeAt(1) == 'x')
+				begin = 2;
 				radix = 16;
-			else if (s->charCodeAt(1) == 'b')
-				radix = 2;
 		}
 		std::string S(*s);
-		wrapper(mp_read_radix(&number, &S[0] + begin, radix));
+		wrapper(mp_read_radix(&number, &S[begin], radix));
 	}
-	client::String* toString(int radix)
+	[[cheerp::jsexport]]
+	client::String* toString(int radix = 0)
 	{
 		int dim = 0;
 		wrapper(mp_radix_size(&number, radix, &dim));

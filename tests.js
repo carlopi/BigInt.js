@@ -146,21 +146,20 @@ var libraries = (function () {
             })
         },
         "Cheerp BigInt": {
-		url: ["BigInt.js"],
-//		url: ["https://raw.githack.com/carlopi/BigInt.js/master/BigInt.js"],
-		 projectURL: "https://github.com/carlopi/BigInt.js",
+		url: ["https://raw.githack.com/carlopi/BigInt.js/master/BigInt.js"],
+		projectURL: "https://github.com/carlopi/BigInt.js",
             onStart: createInitialization("new BigInt"),
             tests: generateTests(function (x) {
                 return x
-                .replace(/([_a-zA-Z0-9]+)\.add\(([_a-zA-Z0-9]+)\)/g, "BigInt.prototype.add($1, $2)")
-                .replace(/([_a-zA-Z0-9]+)\.minus\(([_a-zA-Z0-9]+)\)/g, "BigInt.prototype.subtract($1, $2)")
-                .replace(/([_a-zA-Z0-9]+)\.times\(([_a-zA-Z0-9]+)\)/g, "BigInt.prototype.multiply($1, $2)")
-                .replace(/([_a-zA-Z0-9]+)\.over\(([_a-zA-Z0-9]+)\)/g, "BigInt.prototype.divide($1, $2)")
-                .replace(/([_a-zA-Z0-9]+)\.square\(\)/g, "BigInt.prototype.multiply($1, $1)")
+                .replace(/([_a-zA-Z0-9]+)\.add\(([_a-zA-Z0-9]+)\)/g, "BigInt.add($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.minus\(([_a-zA-Z0-9]+)\)/g, "BigInt.subtract($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.times\(([_a-zA-Z0-9]+)\)/g, "BigInt.multiply($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.over\(([_a-zA-Z0-9]+)\)/g, "BigInt.divide($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.square\(\)/g, "BigInt.multiply($1, $1)")
                 .replace(/([_a-zA-Z0-9]+)\.toString\(([_a-zA-Z0-9]+)\)/g, "($1).toString($2)")
                 .replace(/parseInt\(([_a-zA-Z0-9]+),\s*16\)/g, "new BigInt('0x' + $1)")
                 .replace(/parseInt\(([_a-zA-Z0-9]+),\s*10\)/g, "new BigInt($1)")
-                .replace(/([_a-zA-Z0-9]+)\.pow\(([_a-zA-Z0-9]+)\)/g, "BigInt.prototype.exponentiate($1, new BigInt($2.toString()))");
+                .replace(/([_a-zA-Z0-9]+)\.pow\(([_a-zA-Z0-9]+)\)/g, "BigInt.exponentiate($1, $2)");
             })
         },
         /*"Silent Matt BigInteger": {
@@ -174,7 +173,7 @@ var libraries = (function () {
                 .replace("parseInt", "BigInteger.parse");
             })
         },*/
-        /*"Tom Wu jsbn": {
+        "Tom Wu jsbn": {
             url: ["http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn.js", "http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn2.js"],
             projectURL: "http://www-cs-students.stanford.edu/~tjw/jsbn/",
             onStart: createInitialization("new BigInteger"),
@@ -184,7 +183,7 @@ var libraries = (function () {
                 .replace(/\.over/g, ".divide")
                 .replace("parseInt", "new BigInteger");
             })
-        },*/
+        },
         "Fedor Indutny bn.js": {
             url: ["https://rawgit.com/indutny/bn.js/master/lib/bn.js"],
             projectURL: "https://github.com/indutny/bn.js",

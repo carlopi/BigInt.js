@@ -106,7 +106,7 @@ var libraries = (function () {
 
     var libraries = {
         "Peter Olson BigInteger.js": {
-            url: ["./BigInteger.js"],
+            url: ["https://unpkg.com/biginteger@1.0.3/biginteger.js"],
             projectURL: "https://github.com/peterolson/BigInteger.js",
             onStart: createInitialization("bigInt"),
             tests: generateTests(function (x) { return x.replace("parseInt", "bigInt"); })
@@ -146,8 +146,8 @@ var libraries = (function () {
             })
         },
         "Cheerp BigInt": {
-            url: ["./BigInt.js"],
-            projectURL: "https://leaningtech.com",
+	    url: ["https://rawcdn.githack.com/carlopi/BigInt.js/3c17e11d1f02fe6589ebdb5186ea6550a1131e5a/BigInt.js"],
+		 projectURL: "https://github.com/carlopi/BigInt.js",
             onStart: createInitialization("new BigInt"),
             tests: generateTests(function (x) {
                 return x
@@ -173,7 +173,7 @@ var libraries = (function () {
                 .replace("parseInt", "BigInteger.parse");
             })
         },*/
-        "Tom Wu jsbn": {
+        /*"Tom Wu jsbn": {
             url: ["http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn.js", "http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn2.js"],
             projectURL: "http://www-cs-students.stanford.edu/~tjw/jsbn/",
             onStart: createInitialization("new BigInteger"),
@@ -183,7 +183,7 @@ var libraries = (function () {
                 .replace(/\.over/g, ".divide")
                 .replace("parseInt", "new BigInteger");
             })
-        },
+        },*/
         "Fedor Indutny bn.js": {
             url: ["https://rawgit.com/indutny/bn.js/master/lib/bn.js"],
             projectURL: "https://github.com/indutny/bn.js",

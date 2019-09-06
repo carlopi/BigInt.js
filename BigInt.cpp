@@ -9,28 +9,30 @@ public:
 	[[cheerp::jsexport]]
 	BigInt(client::String* s = NULL)
 	{
-		client::console.log(s);
 		//initialize to 0
 		wrapper(mp_init(&number));
-		if (s == NULL)
+		if (s == NULL || s->get_length() == 0)
 			return;
 		int radix = 10;
 		int begin = 0;
-		if (s->charCodeAt(0) == '0' && s->charCodeAt(1) == 'x')
+		if (s->charCodeAt(0) == '0' && s->get_length() > 1)
 		{
-				begin = 2;
+			begin = 2;
+			const int code = s->charCodeAt(1);
+			if (code == 'x')
 				radix = 16;
+			else if (code == 'b')
+				radix = 2;
 		}
-		std::string S(*s);
+		const std::string S(*s);
 		wrapper(mp_read_radix(&number, &S[begin], radix));
 	}
-	[[cheerp::jsexport]]
-	client::String* toString(int radix = 0)
+	client::String* toString(int radix = 10)
 	{
 		int dim = 0;
 		wrapper(mp_radix_size(&number, radix, &dim));
 		std::string S;
-		S.resize(dim-1);
+		S.resize(dim + 1);
 		wrapper(mp_toradix(&number, &S[0], radix));
 		return new client::String(S.c_str());
 	}

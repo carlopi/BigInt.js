@@ -109,7 +109,18 @@ var libraries = (function () {
             url: ["https://unpkg.com/biginteger@1.0.3/biginteger.js"],
             projectURL: "https://github.com/peterolson/BigInteger.js",
             onStart: createInitialization("BigInteger"),
-            tests: generateTests(function (x) { return x.replace("parseInt", "BigInteger"); })
+            tests: generateTests(function (x) {
+                return x
+                .replace(/([_a-zA-Z0-9]+)\.add\(([_a-zA-Z0-9]+)\)/g, "BigInteger.add($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.minus\(([_a-zA-Z0-9]+)\)/g, "BigInteger.subtract($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.times\(([_a-zA-Z0-9]+)\)/g, "BigInteger.multiply($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.over\(([_a-zA-Z0-9]+)\)/g, "BigInteger.divide($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.square\(\)/g, "BigInteger.multiply($1, $1)")
+                .replace(/([_a-zA-Z0-9]+)\.toString\(([_a-zA-Z0-9]+)\)/g, "($1).toString($2)")
+                .replace(/parseInt\(([_a-zA-Z0-9]+),\s*16\)/g, "BigInteger('0x' + $1)")
+                .replace(/parseInt\(([_a-zA-Z0-9]+),\s*10\)/g, "BigInteger($1)")
+                .replace(/([_a-zA-Z0-9]+)\.pow\(([_a-zA-Z0-9]+)\)/g, "BigInteger.exponentiate($1, $2)");
+            })
         },
         "Yaffle BigInteger": {
             url: ["https://rawgit.com/Yaffle/BigInteger/gh-pages/BigInteger.js"],
@@ -173,7 +184,7 @@ var libraries = (function () {
                 .replace("parseInt", "BigInteger.parse");
             })
         },*/
-        "Tom Wu jsbn": {
+        /*"Tom Wu jsbn": {
             url: ["http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn.js", "http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn2.js"],
             projectURL: "http://www-cs-students.stanford.edu/~tjw/jsbn/",
             onStart: createInitialization("new BigInteger"),
@@ -183,7 +194,7 @@ var libraries = (function () {
                 .replace(/\.over/g, ".divide")
                 .replace("parseInt", "new BigInteger");
             })
-        },
+        },*/
         "Fedor Indutny bn.js": {
             url: ["https://rawgit.com/indutny/bn.js/master/lib/bn.js"],
             projectURL: "https://github.com/indutny/bn.js",

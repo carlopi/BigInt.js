@@ -151,15 +151,15 @@ var libraries = (function () {
             onStart: createInitialization("new BigInt"),
             tests: generateTests(function (x) {
                 return x
-                .replace(/([_a-zA-Z0-9]+)\.add\(([_a-zA-Z0-9]+)\)/g, "BigInt.prototype.add($1, $2)")
-                .replace(/([_a-zA-Z0-9]+)\.minus\(([_a-zA-Z0-9]+)\)/g, "BigInt.prototype.subtract($1, $2)")
-                .replace(/([_a-zA-Z0-9]+)\.times\(([_a-zA-Z0-9]+)\)/g, "BigInt.prototype.multiply($1, $2)")
-                .replace(/([_a-zA-Z0-9]+)\.over\(([_a-zA-Z0-9]+)\)/g, "BigInt.prototype.divide($1, $2)")
-                .replace(/([_a-zA-Z0-9]+)\.square\(\)/g, "BigInt.prototype.multiply($1, $1)")
+                .replace(/([_a-zA-Z0-9]+)\.add\(([_a-zA-Z0-9]+)\)/g, "BigInt.add($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.minus\(([_a-zA-Z0-9]+)\)/g, "BigInt.subtract($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.times\(([_a-zA-Z0-9]+)\)/g, "BigInt.multiply($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.over\(([_a-zA-Z0-9]+)\)/g, "BigInt.divide($1, $2)")
+                .replace(/([_a-zA-Z0-9]+)\.square\(\)/g, "BigInt.multiply($1, $1)")
                 .replace(/([_a-zA-Z0-9]+)\.toString\(([_a-zA-Z0-9]+)\)/g, "($1).toString($2)")
                 .replace(/parseInt\(([_a-zA-Z0-9]+),\s*16\)/g, "new BigInt('0x' + $1)")
                 .replace(/parseInt\(([_a-zA-Z0-9]+),\s*10\)/g, "new BigInt($1)")
-                .replace(/([_a-zA-Z0-9]+)\.pow\(([_a-zA-Z0-9]+)\)/g, "BigInt.prototype.exponentiate($1, new BigInt($2.toString()))");
+                .replace(/([_a-zA-Z0-9]+)\.pow\(([_a-zA-Z0-9]+)\)/g, "BigInt.exponentiate($1, $2)");
             })
         },
         /*"Silent Matt BigInteger": {

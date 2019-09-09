@@ -1,7 +1,7 @@
 # BigInt.js
 Arbitrary precision integer arithmetic library. Porting of libtommath, a C library
 
-Read more about it here: MEDIUM LINK
+Read more about it here: https://medium.com/leaningtech/a-fast-bigint-js-in-an-evening-compiling-c-to-javascript-db61ae733512
 
 
 

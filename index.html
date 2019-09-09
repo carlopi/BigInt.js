@@ -60,6 +60,21 @@
 	<body>
         <div id="loading">Please wait for libraries to load... <span id="loaded">0</span>/<span id="total"></span></div>
         <div id="container">
+	    Thanks to:
+	<br />
+	     - The <a href="https://www.libtom.net/">LibTom project</a> for the great quality C codebase
+	<br />
+	     - The <a href="https://llvm.org/">LLVM</a> and <a href="https://leaningtech.com/cheerp/">Cheerp</a> projects
+	<br />
+	     - Peter Olson + Mathias Bynens + Robert Kieffer + John-David Dalton for the benchmark (took from <a href="https://github.com/peterolson/BigInteger.js">here</a>)
+	<br />
+	     Wait for the libraries to perform all initializations, then press "Run all benchmarks" to have the benchmarks run by a webWorker that runs on your device.
+	     <br />
+	     <a href=https://medium.com/leaningtech/a-fast-bigint-js-in-an-evening-compiling-c-to-javascript-db61ae733512>Here</a> you can find an article discussing what's going on, written by me, Carlo Piovesan.
+	     <br />
+        </div>
+	<br />
+        <div id="container">
             <h1>Big integer benchmarks</h1>
             Some performance benchmarks for different libraries that do arbitrary precision integer arithmetic. Keep in mind that the results shown here are only a rough estimate of the relative performance and can change significantly from run to run, as well as across different runtime environments.<br />
             <button id="btnRunAll">Run all benchmarks</button>
